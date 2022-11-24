@@ -1,4 +1,4 @@
-package dao;
+package model;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -7,21 +7,11 @@ import javax.swing.JOptionPane;
  *
  * @author pedro
  */
-public class UsuarioDAO {
-    
-    private Connection conexao;
+public class UsuarioDAO extends ConexaoDB{
         
     //Construtor
     public UsuarioDAO()throws Exception {
-        try {
-            String url = "jdbc:postgresql://localhost:5432/sistemaGas";
-            String usuario = "postgres";
-            String senha = "1234";
-            conexao = DriverManager.getConnection(url, usuario, senha);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
-            System.exit(1);
-        }
+        conectar();
     }//Fim construtor
     
     //Registrar no banco de dados
@@ -31,7 +21,7 @@ public class UsuarioDAO {
             PreparedStatement estado;
 
             String sqlInsert = "INSERT INTO usuarios (username, password) VALUES(?,?)";
-            estado = conexao.prepareStatement(sqlInsert, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            estado = conexao.prepareStatement(sqlInsert);
 
             estado.setString(1, user);
             estado.setString(2, pass);
@@ -59,7 +49,7 @@ public class UsuarioDAO {
             System.out.println("ID  " + "USER     " + "PASSWORD");
             while (resultado.next()) {
                 int id = resultado.getInt("id");
-                String user = resultado.getString("name");
+                String user = resultado.getString("username");
                 String pass = resultado.getString("password");
                 System.out.println(id + "   " + user + "     " + pass);
             }
