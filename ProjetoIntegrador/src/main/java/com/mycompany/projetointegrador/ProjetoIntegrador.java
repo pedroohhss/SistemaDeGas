@@ -3,17 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import view.Login;
+package com.mycompany.projetointegrador;
+import view.LoginUsuario;
+import view.TelaMenu;
 
 /**
  *
  * @author pedro
  */
-public class MainTeste {
+public class ProjetoIntegrador {
     
     public static void main(String[] args) throws Exception {
 
-        Login login = new Login();
-        login.setVisible(true);
+        TelaMenu menu = new TelaMenu();
+        menu.setVisible(true);
+        //Login login = new Login();
+        //login.setVisible(true);
     }
 }

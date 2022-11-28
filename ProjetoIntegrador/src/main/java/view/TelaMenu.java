@@ -4,6 +4,9 @@
  */
 package view;
 
+import view.cadastro.CadastroProduto;
+import view.cadastro.CadastroCliente;
+
 /**
  *
  * @author pedro
@@ -29,25 +32,43 @@ public class TelaMenu extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastroCliente = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItemCliCad = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItemProdCad = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenuCadastroCliente.setText("Cliente");
 
-        jMenuItem1.setText("Cadastro");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemCliCad.setText("Cadastro");
+        jMenuItemCliCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItemCliCadActionPerformed(evt);
             }
         });
-        jMenuCadastroCliente.add(jMenuItem1);
+        jMenuCadastroCliente.add(jMenuItemCliCad);
 
         jMenuBar1.add(jMenuCadastroCliente);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Produto");
+
+        jMenuItemProdCad.setText("Cadastro");
+        jMenuItemProdCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProdCadActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemProdCad);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu1.setText("Funcionário");
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setText("Fornecedor");
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -65,11 +86,17 @@ public class TelaMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuItemCliCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCliCadActionPerformed
         this.dispose();
-        TelaCliente cliente = new TelaCliente();
+        CadastroCliente cliente = new CadastroCliente();
         cliente.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMenuItemCliCadActionPerformed
+
+    private void jMenuItemProdCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProdCadActionPerformed
+        this.dispose();
+        CadastroProduto produto = new CadastroProduto();
+        produto.setVisible(true);
+    }//GEN-LAST:event_jMenuItemProdCadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,9 +134,12 @@ public class TelaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastroCliente;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemCliCad;
+    private javax.swing.JMenuItem jMenuItemProdCad;
     // End of variables declaration//GEN-END:variables
 }
