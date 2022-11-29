@@ -6,6 +6,7 @@ package view;
 
 import view.cadastro.CadastroProduto;
 import view.cadastro.CadastroCliente;
+import view.cadastro.CadastroFuncionario;
 
 /**
  *
@@ -36,6 +37,7 @@ public class TelaMenu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItemProdCad = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,6 +67,15 @@ public class TelaMenu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu1.setText("Funcionário");
+
+        jMenuItem1.setText("Cadastro");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Fornecedor");
@@ -97,6 +108,12 @@ public class TelaMenu extends javax.swing.JFrame {
         CadastroProduto produto = new CadastroProduto();
         produto.setVisible(true);
     }//GEN-LAST:event_jMenuItemProdCadActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        this.dispose();
+        CadastroFuncionario funcionario = new CadastroFuncionario();
+        funcionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +156,7 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastroCliente;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCliCad;
     private javax.swing.JMenuItem jMenuItemProdCad;
     // End of variables declaration//GEN-END:variables

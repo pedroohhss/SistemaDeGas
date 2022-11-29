@@ -29,7 +29,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         try {
             String url = "jdbc:postgresql://localhost:5432/sistemaGas";
             String usuario = "postgres";
-            String senha = "1234";
+            String senha = "1415";
             conexao = DriverManager.getConnection(url, usuario, senha);
             PreparedStatement banco = conexao.prepareStatement(sql);
             banco.execute();

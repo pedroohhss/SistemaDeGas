@@ -24,7 +24,7 @@ public class FuncionarioDAO extends ConexaoDB{
     public void inserirDados(Funcionario item) {
         try {
             PreparedStatement estado;
-            String sqlInsert = "INSERT INTO produto (nome,endereco,cargo,telefone,cpf) VALUES (?,?,?,?,?)";
+            String sqlInsert = "INSERT INTO funcionario (nome,endereco,cargo,telefone,cpf) VALUES (?,?,?,?,?)";
             estado = conexao.prepareStatement(sqlInsert);
             
             estado.setString(1, item.getNome());

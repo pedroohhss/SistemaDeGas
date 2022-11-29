@@ -15,9 +15,9 @@ public class ProjetoIntegrador {
     
     public static void main(String[] args) throws Exception {
 
-        TelaMenu menu = new TelaMenu();
-        menu.setVisible(true);
-        //Login login = new Login();
-        //login.setVisible(true);
+        //TelaMenu menu = new TelaMenu();
+        // menu.setVisible(true);
+        LoginUsuario login = new LoginUsuario();
+        login.setVisible(true);
     }
 }
